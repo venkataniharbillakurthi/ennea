@@ -2,111 +2,169 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("1.List \n2.Map \n3.Set \n4. Exiting from the program");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1: // list
+                    ArrayList<String> array1 = new ArrayList<>();
+                    array1.add("nihar");
+                    array1.add("suresh");
+                    array1.add("ramesh");
+                    int listchoice;
+                    do {
+                        System.out.println(
+                                "1. Add the Element \n2. Search the Element \n3. Delete the Element by Index \n4. Delete the Element by Value \n5. Display the List Elements in Uppercase (Stream) \n6. Return to memu..");
+                        listchoice = sc.nextInt();
+                        switch (listchoice) {
+                            case 1:
+                                System.out.println("Enter the string value into the arraylist: ");
+                                Scanner sc1 = new Scanner(System.in);
+                                String str = sc1.nextLine();
+                                array1.add(str);
+                                System.out.println("String added!" + str);
+                                break;
 
-        // Creation of Element by using List Interface of Collection.............................................................................
-        // By Using Vector Class
-        Vector<String> v1 = new Vector<>();
+                            case 2:
+                                System.out.println("Enter the index value to search: ");
+                                int search = sc.nextInt();
+                                System.out.println(array1.get(search));
+                                break;
 
-        // By using ArrayList Class
-        ArrayList<String> a1 = new ArrayList<>();
-
-        // By using Linkedlist Class
-        LinkedList<String> l1 = new LinkedList<>();
-
-        // By using Stack Class
-        Stack<Integer> s1 = new Stack<>();
-
-        // Addition of elements into the list
-        v1.add("nihar");
-        v1.add("venkata");// By using Vector
-        v1.add("Madhu");
-
-        a1.addAll(v1);// By using Array
-
-        l1.add("Link1");
-        l1.add("Link2");// By using Linkedlist
-        l1.add("Link3");
-
-        s1.add(23);
-        s1.add(45);// By using Stack
-        s1.add(56);
-
-        // Retrieval the element form the list
-        System.out.println(v1.get(1)); // Vector
-
-        System.out.println(a1.get(0)); // Array
-
-        System.out.println(l1.get(1)); // Linkedlist
-
-        System.out.println(s1.search(56)); // Stack
-
-        // Deletion of element in the list
-        // v1.remove(2); // vector
-
-        // a1.removeAll(a1); // arraylist
-
-        // l1.clear(); // linkedlist
-
-        // s1.pop(); // stack
-
-        // Creation of elements by using Map................................................................................................
-        // Creation of a map Hashtable, Hashmap, LinkedinHashmap all are having the same
-        // operations
-        Map<Integer, String> m1 = new Hashtable<>();
-
-        m1.put(50003, "kondapur");
-        m1.put(50000, "hyd");
-        m1.put(53002, "rjy");
-
-        // Retrieval of keys from the map
-        Set<Integer> keys = m1.keySet();
-        for (Integer key : keys) {
-            System.out.println(key); // or we retrieval by using the values also (m1.values())
-        }
-
-        // Deletion of element from the map
-        // m1.remove(50003);
-        // System.out.println(m1);
-
-        // Creation of element by using set..................................................................................................
-        // Hashset -> HashMap -> Array of nodes(key, values)
-        Set<Integer> set1 = new HashSet<>();
-
-        // LinkedHashset -> LinkedHashMap -> Link of nodes(key, values)
-        LinkedHashSet<Integer> set2 = new LinkedHashSet<>();
-
-        // treeset is used for the ascending order to print the element
-        TreeSet<Integer> set3 = new TreeSet<>();
-
-        set1.add(10);// duplicate value are not a added into the set
-        set1.add(20);
-        set1.add(20);
-        set1.add(30);
-        set1.add(40);
-
-        set2.add(10);// duplicate value are not a added into the set
-        set2.add(20);
-        set2.add(30);
-        set2.add(40);
-        set2.add(40);
-
-        set3.add(80);// duplicate value are not a added into the set
-        set3.add(60);
-        set3.add(50);
-        set3.add(70);
-
-        // In set we can print the between element of the two elements
-        System.out.println(set3.subSet(50, 70));
-        System.out.println(set3.descendingSet());
-
-        // Deletion of element from the map
-        // set3.remove(80);
-        // System.out.println(set3);
-
-        for (Integer e : set1) {
-            System.out.println(e);
-        }
-
-        System.out.println(set2.isEmpty()); // false
+                            case 3:
+                                System.out.println("Enter the index value to remove: ");
+                                int index = sc.nextInt();
+                                String removedElement = array1.remove(index);
+                                System.out.println(removedElement);
+                                System.out.println(array1);
+                                break;
+                            case 4:
+                                System.out.println("Enter the String value to remove: ");
+                                Scanner sc2 = new Scanner(System.in);
+                                String removevalue = sc2.nextLine();
+                                array1.remove(removevalue);
+                                System.out.println(array1);
+                                break;
+                            case 5:
+                                System.out.println("Display the List Elements in Uppercase (Stream):");
+                                array1.stream()
+                                        .map(s -> s.toUpperCase())
+                                        .forEach(s -> System.out.println(s));
+                                break;
+                            case 6:
+                                System.out.println("Return to memu..");
+                                break;
+                            default:
+                                System.out.println("Values should be between 1 to 5!.......");
+                                break;
+                        }
+                    } while (listchoice != 6);
+                    break;
+                case 2: // Map
+                    Map<Integer, String> map1 = new Hashtable<>();
+                    map1.put(0, "kondapur");
+                    map1.put(1, "hyd");
+                    map1.put(2, "rjy");
+                    int mapchoice;
+                    do {
+                        System.out.println(
+                                "Enter the number based on requirements: \n 1.To Add the Element \n 2.To search the element \n 3.To delete the element with value \n4. Enter a substring to filter values \n5. Return to menu..");
+                        mapchoice = sc.nextInt();
+                        switch (mapchoice) {
+                            case 1:
+                                System.out.println("Enter the string value into the arraylist: ");
+                                System.out.println("Enter the string value to list");
+                                String str1 = sc.next();
+                                System.out.println("Enter the key value of the list");
+                                Integer num = sc.nextInt();
+                                map1.put(num, str1);
+                                System.out.println("String added!");
+                                System.out.println(map1);
+                                break;
+                            case 2:
+                                System.out.println("Enter the element to search");
+                                int search = sc.nextInt();
+                                System.out.println(map1.get(search));
+                                System.out.println(map1);
+                                break;
+                            case 3:
+                                System.out.println("Enter the key  to remove: ");
+                                int index = sc.nextInt();
+                                String removedIndex = map1.remove(index);
+                                System.out.println(removedIndex);
+                                System.out.println(map1);
+                                break;
+                            case 4:
+                                System.out.println("Enter a substring to filter values:");
+                                String filter = sc.next();
+                                System.out.println("Filtered Elements:");
+                                map1.entrySet().stream()
+                                        .filter(entry -> entry.getValue().contains(filter))
+                                        .forEach(entry -> System.out.println(entry.getValue()));
+                                break;
+                            case 5:
+                                System.out.println("Return to menu..");
+                                break;
+                            default:
+                                System.out.println("Values should be between 1 to 4!.......");
+                        }
+                    } while (mapchoice != 5);
+                    break;
+                case 3: // Set
+                    Set<Integer> set1 = new HashSet<>();
+                    set1.add(10);
+                    set1.add(30);
+                    set1.add(20);
+                    int setchoice;
+                    do {
+                        System.out.println(
+                                "Enter the number \n1. Add the value \n2. Enter the search element \n3. Enter the remove element \n4. Display the element in Ascending order(use Stream) \n5. Return to menu");
+                        setchoice = sc.nextInt();
+                        switch (setchoice) {
+                            case 1:
+                                System.out.println("Add the value: ");
+                                Integer value = sc.nextInt();
+                                set1.add(value);
+                                System.out.println(set1);
+                                break;
+                            case 2:
+                                System.out.println("Enter the search element: ");
+                                int searchvalue = sc.nextInt();
+                                Boolean ssv = set1.contains(searchvalue);
+                                System.out.println(ssv);
+                                break;
+                            case 3:
+                                System.out.println("Enter the remove element: ");
+                                Scanner sc3 = new Scanner(System.in);
+                                int removevalue = sc3.nextInt();
+                                Boolean rv = set1.remove(removevalue);
+                                System.out.println(rv);
+                                System.out.println(set1);
+                                break;
+                            case 4:
+                                System.out.println("Display the element in  Ascending Order (Stream):");
+                                set1.stream()
+                                        .sorted((a, b) -> a.compareTo(b))
+                                        .forEach(element -> System.out.println(element));
+                                System.out.println("Before sorted set" + set1);
+                                break;
+                            case 5:
+                                System.out.println("Return to menu....");
+                                break;
+                            default:
+                                System.out.println("Values should be between 1 to 5!.......");
+                                break;
+                        }
+                    } while (setchoice != 5);
+                case 4:
+                    System.out.println("Exiting from the program...");
+                default:
+                    System.out.println("Values should be between 1 to 4!...");
+                    break;
+            }
+        } while (choice != 4);
+        sc.close();
     }
 }
