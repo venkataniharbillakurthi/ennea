@@ -1,0 +1,48 @@
+{
+"enrollments": [
+    {
+      "id": "e_1739259653949",
+      "userId": "ram@example.com",
+      "courseId": "8",
+      "courseName": "DevOps with AWS",
+      "enrollmentDate": "2025-02-11",
+      "status": "active",
+      "studentName": "ram",
+      "studentEmail": "ram@example.com",
+      "studentPhone": "08328657726"
+    },
+    {
+      "id": "e_1739278892190",
+      "userId": "venkata@gmail.com",
+      "courseId": "20",
+      "courseName": "Rust Programming for System Development",
+      "enrollmentDate": "2025-02-11",
+      "status": "active",
+      "studentName": "venkata",
+      "studentEmail": "venkata@gmail.com",
+      "studentPhone": "08328657726"
+    },
+    {
+      "id": "e_1739278936492",
+      "userId": "user@example.com",
+      "courseId": "9",
+      "courseName": "Android App Development with Kotlin",
+      "enrollmentDate": "2025-02-11",
+      "status": "active",
+      "studentName": "user",
+      "studentEmail": "user@example.com",
+      "studentPhone": "08328657726"
+    },
+    {
+      "id": "e_1739439074832",
+      "userId": "nihar@gmail.com",
+      "courseId": "1",
+      "courseName": "Java Full Stack Development",
+      "enrollmentDate": "2025-02-13",
+      "status": "active",
+      "studentName": "nihar",
+      "studentEmail": "nihar@gmail.com",
+      "studentPhone": "08328657726"
+    }
+  ]
+}
